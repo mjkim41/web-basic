@@ -43,7 +43,7 @@ public class DancerRegisterServlet extends HttpServlet {
         w.write("<body>\n");
         // <form action=\"/path\" method=\"get\"> : form을 누르면 해당 path 로 이동해라.
         w.write("<form action=\"/chap02/dancer/process\" method=\"get\" id=\"reg-form\">");
-        // form 안에 input을 넣고, input에 <name="crewName" value="professional">이라고 datset를 지정하면,
+        // form 안에 input을 넣고, input에 <name="crewName" value="professional">이라고 입력 필드의 이름과 값을 지정하면
         //   form action에 적힌 path로 이동하면서 이 때 스트링 쿼리로 ?crewName=professional 가 추가됨
         w.write("<label># 이름 : <input type=\"text\" name=\"name\"></label>");
         w.write("<label># 크루이름 : <input type=\"text\" name=\"crewName\"></label>");

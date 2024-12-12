@@ -10,10 +10,6 @@
   <title>Document</title>
 </head>
 <body>
-  <!-- src > main > webapp 폴더에 저장해야 함 -->
-   <!-- jsp는 java에서 html를 쓰는 라이브러리 -->
-  <!-- jsp .jsp 파일을 넣으면 ,  tomcat8181.root>apache>jsp 에 맞게  servlet 형식으로 변환해줌 -->
-
 
   <!-- <% %> </% %> 해서 java 코드 넣음 -->
   <% for (int i = 0; i < 3; i++) { %>

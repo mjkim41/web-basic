@@ -9,10 +9,6 @@
 </head>
 <body>
 
-  <%--  servlet 에서 setAttribute 한 것을 getAttribute나 --%>
-  <%-- ${}라는 expressive language(el)로 가져오기 --%>
-  <%-- dance.crew라고 히면 알아서 el에서 dance.getcrew()를 가져옴--%>
-  <%-- 객체로 가져옴 --%>
 
   <%--
     String name = (String) request.getAttribute("name");
@@ -20,8 +16,13 @@
     String danceLevel = (String) request.getAttribute("level");
   --%>
 
+ <%--  ////
+    servlet 에서 setAttribute(String 속성이름, Object 속성값)으로 정보를 전달하면,
+    jsp에서는 getAttribute 혹은  ${}라는 expressive language(EL)를 통해 정보를 가져올 수 있음
+    이 때, ${dance.crew} 이런식으로 입력하면, crew가 private field 더라도 알아서 jsp에서 dance.getCrew()의 값을 가져 옴.
+      --%>
 
-  <%-- <%= => : System.out.println --%>
+  <%-- //// <%= => : System.out.println --%>
   <h1>댄서 등록 결과 페이지입니다.</h1>
   <h2>${dancer.name}님 (소속: ${dancer.crewName})이 정상 등록되었습니다.</h2>
   <h3>댄스 수준: ${dancer.danceLevel}</h3>

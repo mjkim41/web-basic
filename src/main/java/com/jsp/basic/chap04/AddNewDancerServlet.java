@@ -38,17 +38,24 @@ public class AddNewDancerServlet extends HttpServlet {
 
         DancerList.addDancer(dancer);
 
-        // 서블릿이 jsp가 화면을 그릴 떄 필요한 데이터를 전달해줘야 함
-        // 여기서 set하고
-      // servlet 에서 setAttribute 한 것을 getAttribute나
-      // ${}라는 expressive language(el)로 가져오기
+        /*
+          Servlet이 JSP으로 클라이언트의 요청을 전달해 주기 전에,
+          먼저 HttpRequestServlet에 필요한 정보를 전달해주어야 함
+          => 어떻게??
+          => 1) Servlet에서 HttpRequestServlet.setAttribute(속성이름, 속성값)로 전달하고자 하는 정보 저장
+            2) JSP에서 EL(Expressive Language)인 ${}로 정보를 가져올 수 있음
+         */
         /* req.setAttribute("name", name);
         req.setAttribute("crew", crewName);
         req.setAttribute("level", danceLevel);
         */
         req.setAttribute("dancer", dancer);
 
-        // 응답 html 생성 처리
+        /*
+          (FYI. Servlet -> JSP 클라이언트 요청 전달 방법 :
+              1) req.getRequestDispatcher(리소스 경로)로 RequestDispatcher 객체 생성
+              2) RequestDispatcher.forward(HttpRequestServlet, HttpResponseServlet)로 jsp에 요청 전달)
+        */
         RequestDispatcher dispatcher
                 = req.getRequestDispatcher("/WEB-INF/chap04/dancer/result.jsp");
         dispatcher.forward(req, resp);

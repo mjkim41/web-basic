@@ -27,7 +27,7 @@ public class Main {
 
         // TOMCAT의 포트 설정
         tomcat.setPort(Integer.parseInt(webPort));
-        //  Tomcat이 HTTP 요청을 수신하고 처리하는 역할을 하며, 포트 번호와 프로토콜(예: HTTP)을 설정하는 기능을 합니다.
+        //  Tomcat이 HTTP 요청을 수신하고 처리하는 역할을 하며, 포트 번호와 프로토콜(예: HTTP)을 설정하는 기능을 함
         //이 메서드는 Tomcat 서버의 연결 지점(포트)을 가져오는 역할을 하며, 이를 통해 서버의 설정이나 작동을 더 세밀하게 다룰 수 있습니다.
         tomcat.getConnector();
 
